@@ -1,4 +1,5 @@
 //Baseado no código disponível em https://tiagohorta1995.medium.com/mosquitto-mqtt-broker-and-esp8266-communcation-in-6-easy-steps-5ea0efae5a10
+//Caso necessário... https://github.com/knolleary/pubsubclient
 
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
