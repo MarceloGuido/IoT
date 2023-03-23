@@ -71,6 +71,7 @@ void setup(void) {
 void loop(void) {
   
   MQTT.publish(IoT, WiFi.hostname());
+  MQTT.publish(IoT, millis());
   
   setupWifi();
   setupMQTT();
