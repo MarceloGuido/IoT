@@ -6,7 +6,7 @@
 #define NET_PASSWORD "SENHA";  // Substituir SENHA pela senha da rede WiFi
 
 //Configuração do Broker MQTT
-#define MQTT_ID "MQTT-ID" //Substituir MQTT-ID pela identificação do MQTT no Broker
+#define MQTT_ID "MQTT-ID" //Substituir MQTT-ID pela identificação do cliente no MQTT no Broker
 #define MQTT_BROKER "MQTT-BROKER" //Substituir MQTT-BROKER pelo domínio do MQTT no Broker
 #define MQTT_PORT XXXX //Substituir XXXX pela porta do Broker. Normalmente será a 1883
 #define MQTT_TOPIC "MQTT-TOPIC" //Substituir MQTT-TOPIC pelo tópico a ser utiizado no MQTT Broker
@@ -70,8 +70,8 @@ void setup(void) {
 
 void loop(void) {
   
-  MQTT.publish(IoT, WiFi.hostname());
-  MQTT.publish(IoT, millis());
+  MQTT.publish(MQTT_TOPIC, WiFi.hostname());
+  MQTT.publish(MQTT_TOPIC, millis());
   
   setupWifi();
   setupMQTT();
