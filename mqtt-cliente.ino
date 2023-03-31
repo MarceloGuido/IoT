@@ -23,7 +23,7 @@ void setupWiFi() {
   Serial.print("Conectando a rede WiFi ");
   Serial.println(NET_SSID);
   
-  WiFi.begin(ssid, password);
+  WiFi.begin(NET_SSID, NET_PASSWORD);
   
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
@@ -47,7 +47,7 @@ void setupMQTT() {
   {
     Serial.print("Tentando conectar-se ao Broker MQTT: ");
     Serial.println(MQTT_BROKER);
-    if (MQTT.connect(MQTT_ID)
+    if (MQTT.connect(MQTT_ID))
         {
           Serial.println("Conectado com sucesso ao Broker MQTT!");
         }
@@ -77,8 +77,6 @@ void setup(void) {
   setupMQTT();
   MQTT.setCallback(callback);
   MQTT.subscribe(MQTT_TOPIC);
-
-
 }
 
 void loop(void) {
